@@ -14,6 +14,14 @@ class _FollowersPageState extends State<FollowersPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        foregroundColor: Color(0xff191A19),
+        leading: IconButton(
+          color: Color(0xff191A19),
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         backgroundColor: Color(0xffD1E8E4),
         title: Text(
           "Followers",
@@ -27,18 +35,19 @@ class _FollowersPageState extends State<FollowersPage> {
           itemCount: widget.profileData?.peopleFollows?.length ?? 0,
           itemBuilder: (_, int i) {
             return Container(
-                color: Color(0xff191A19),
-                padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 3),
-                child: ListTile(
-                  leading: Text(
-                    '${i + 1}.',
-                    style: font22,
-                  ),
-                  title: Text(
-                    '${widget.profileData?.peopleFollows?[i]}',
-                    style: font22,
-                  ),
-                ));
+              color: Color(0xff191A19),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+              child: ListTile(
+                leading: Text(
+                  '${i + 1}.',
+                  style: font22,
+                ),
+                title: Text(
+                  '${widget.profileData?.peopleFollows?[i]}',
+                  style: font22,
+                ),
+              ),
+            );
           },
         ),
       ),
