@@ -93,15 +93,17 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Text(
                             "${profileData?.firstname?.toUpperCase()} ${profileData?.lastname?.toUpperCase()}",
-                            style: TextStyle(fontFamily:'Avenir',
-                                fontSize: 15, fontWeight: FontWeight.w700),
+                            style: TextStyle(
+                                fontFamily: 'Avenir',
+                                fontSize: 15,
+                                fontWeight: FontWeight.w700),
                           ),
                           SizedBox(
                             height: 5,
                           ),
                           Text(
                             ("${profileData?.region ?? " "},${profileData?.country}"),
-                            style: TextStyle(fontSize: 10, color: Colors.grey,fontFamily:'Avenir',),
+                            style: greyFont(),
                           ),
                         ],
                       ),
@@ -120,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Text(
               ("${profileData?.bio}"),
               maxLines: 5,
-              style: TextStyle(fontSize: 10, color: Colors.grey,fontFamily:'Avenir',),
+              style: greyFont(),
             ),
           ),
           Spacer(),
@@ -137,33 +139,47 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     Text(
                       'Posts',
-                      style: TextStyle(color: Colors.grey, fontSize: 10.0,fontFamily:'Avenir',),
+                      style: greyFont(),
                     ),
                     SizedBox(
                       height: 7,
                     ),
                     Text(
                       "${profileData?.post}",
-                      style: TextStyle(fontSize: 18.0,fontFamily:'Avenir',),
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontFamily: 'Avenir',
+                      ),
                     ),
                   ],
                 ),
-                GestureDetector(onTap: (){
-                  Navigator.push(context, CupertinoPageRoute( builder: (context) => FollowersPage()),);
-                },
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => FollowersPage(
+                          profileData: profileData,
+                        ),
+                      ),
+                    );
+                  },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Followers',
-                        style: TextStyle(color: Colors.grey, fontSize: 10.0,fontFamily:'Avenir',),
+                        style: greyFont(),
                       ),
                       SizedBox(
                         height: 7,
                       ),
                       Text(
                         "${profileData?.followers}",
-                        style: TextStyle(fontSize: 18.0,fontFamily:'Avenir',),
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          fontFamily: 'Avenir',
+                        ),
                       ),
                     ],
                   ),
@@ -173,14 +189,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     Text(
                       'Following',
-                      style: TextStyle(fontFamily:'Avenir',color: Colors.grey, fontSize: 10.0),
+                      style: greyFont(),
                     ),
                     SizedBox(
                       height: 7,
                     ),
                     Text(
                       "${profileData?.following}",
-                      style: TextStyle(fontFamily:'Avenir',fontSize: 18.0),
+                      style: TextStyle(fontFamily: 'Avenir', fontSize: 18.0),
                     ),
                   ],
                 ),
@@ -191,4 +207,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+
+  TextStyle greyFont() => TextStyle(
+        fontSize: 10,
+        color: Colors.grey,
+        fontFamily: 'Avenir',
+      );
 }

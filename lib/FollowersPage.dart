@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:jsonassignment/models/profile_model.dart';
 
 class FollowersPage extends StatefulWidget {
-  const FollowersPage({Key? key}) : super(key: key);
+  final ProfileData? profileData;
+  const FollowersPage({Key? key, required this.profileData}) : super(key: key);
+
 
   @override
   _FollowersPageState createState() => _FollowersPageState();
