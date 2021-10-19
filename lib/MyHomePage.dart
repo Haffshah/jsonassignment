@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:jsonassignment/FollowersPage.dart';
 import 'package:jsonassignment/models/profile_model.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
@@ -67,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             child: Container(
               child: Image.network(
-                profileData!.image ?? " ",
+                profileData?.image ?? "0",
                 fit: BoxFit.cover,
               ),
               height: MediaQuery.of(context).size.height / 1.60,
@@ -91,16 +92,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "${profileData!.firstname!.toUpperCase()} ${profileData!.lastname!.toUpperCase()}",
-                            style: TextStyle(
+                            "${profileData?.firstname?.toUpperCase()} ${profileData?.lastname?.toUpperCase()}",
+                            style: TextStyle(fontFamily:'Avenir',
                                 fontSize: 15, fontWeight: FontWeight.w700),
                           ),
                           SizedBox(
                             height: 5,
                           ),
                           Text(
-                            ("${profileData!.region ?? " "},${profileData!.country}"),
-                            style: TextStyle(fontSize: 10, color: Colors.grey),
+                            ("${profileData?.region ?? " "},${profileData?.country}"),
+                            style: TextStyle(fontSize: 10, color: Colors.grey,fontFamily:'Avenir',),
                           ),
                         ],
                       ),
@@ -117,9 +118,9 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.symmetric(horizontal: 30),
             height: 50,
             child: Text(
-              ("${profileData!.bio}"),
+              ("${profileData?.bio}"),
               maxLines: 5,
-              style: TextStyle(fontSize: 10, color: Colors.grey),
+              style: TextStyle(fontSize: 10, color: Colors.grey,fontFamily:'Avenir',),
             ),
           ),
           Spacer(),
@@ -136,46 +137,50 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     Text(
                       'Posts',
-                      style: TextStyle(color: Colors.grey, fontSize: 10.0),
+                      style: TextStyle(color: Colors.grey, fontSize: 10.0,fontFamily:'Avenir',),
                     ),
                     SizedBox(
                       height: 7,
                     ),
                     Text(
                       "${profileData?.post}",
-                      style: TextStyle(fontSize: 18.0),
+                      style: TextStyle(fontSize: 18.0,fontFamily:'Avenir',),
                     ),
                   ],
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Followers',
-                      style: TextStyle(color: Colors.grey, fontSize: 10.0),
-                    ),
-                    SizedBox(
-                      height: 7,
-                    ),
-                    Text(
-                      "${profileData?.followers}",
-                      style: TextStyle(fontSize: 18.0),
-                    ),
-                  ],
+                GestureDetector(onTap: (){
+                  Navigator.push(context, CupertinoPageRoute( builder: (context) => FollowersPage()),);
+                },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Followers',
+                        style: TextStyle(color: Colors.grey, fontSize: 10.0,fontFamily:'Avenir',),
+                      ),
+                      SizedBox(
+                        height: 7,
+                      ),
+                      Text(
+                        "${profileData?.followers}",
+                        style: TextStyle(fontSize: 18.0,fontFamily:'Avenir',),
+                      ),
+                    ],
+                  ),
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       'Following',
-                      style: TextStyle(color: Colors.grey, fontSize: 10.0),
+                      style: TextStyle(fontFamily:'Avenir',color: Colors.grey, fontSize: 10.0),
                     ),
                     SizedBox(
                       height: 7,
                     ),
                     Text(
                       "${profileData?.following}",
-                      style: TextStyle(fontSize: 18.0),
+                      style: TextStyle(fontFamily:'Avenir',fontSize: 18.0),
                     ),
                   ],
                 ),

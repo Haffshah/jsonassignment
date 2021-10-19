@@ -1,5 +1,3 @@
-
-
 class ProfileData {
   String? firstname;
   String? lastname;
@@ -10,6 +8,7 @@ class ProfileData {
   num? followers;
   num? following;
   String? image;
+  List<String>? peopleFollows;
 
   ProfileData(
       {this.image,
@@ -20,7 +19,8 @@ class ProfileData {
       this.bio,
       this.post,
       this.followers,
-      this.following});
+      this.following,
+      this.peopleFollows});
 
   factory ProfileData.fromJson(Map<String, dynamic> parsedJson) {
     return ProfileData(
@@ -32,6 +32,8 @@ class ProfileData {
         bio: parsedJson['bio'],
         post: parsedJson['post'],
         followers: parsedJson['followers'],
-        following: parsedJson['following']);
+        following: parsedJson['following'],
+        peopleFollows:
+            List<String>.from(parsedJson["peopleFollows"].map((x) => x)));
   }
 }
