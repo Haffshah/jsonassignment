@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:jsonassignment/FollowersPage.dart';
+import 'package:jsonassignment/Screens/FollowersPage.dart';
 import 'package:jsonassignment/models/profile_model.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 bottomRight: Radius.circular(12),
               ),
               child: Container(
-                child: Image.network(
+                child: Image.asset(
                   profileData?.image ?? "0",
                   fit: BoxFit.cover,
                 ),
@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10),
+                const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10),
                 child: Column(
                   children: [
                     SizedBox(height: 10),
@@ -228,14 +228,14 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   TextStyle greyFont() => TextStyle(
-        fontSize: 10,
-        color: Colors.grey,
-        fontFamily: 'Avenir',
-      );
+    fontSize: 10,
+    color: Colors.grey,
+    fontFamily: 'Avenir',
+  );
 
   Widget buildSheet() => Column(
-        children: [],
-      );
+    children: [],
+  );
 }
 
 class Bottomsheet extends StatelessWidget {

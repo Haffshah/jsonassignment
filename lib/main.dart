@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jsonassignment/MyHomePage.dart';
+import 'package:jsonassignment/Screens/MyHomePage.dart';
 
 void main() {
   runApp(MyApp());

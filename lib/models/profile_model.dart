@@ -6,9 +6,10 @@ class ProfileData {
   String? bio;
   num? post;
   num? followers;
-  num? following;
+  double? following;
   String? image;
   List<String>? peopleFollows;
+  // MobileData? mobileData;
 
   ProfileData(
       {this.image,
@@ -20,6 +21,7 @@ class ProfileData {
       this.post,
       this.followers,
       this.following,
+        // this.mobileData,
       this.peopleFollows});
 
   factory ProfileData.fromJson(Map<String, dynamic> parsedJson) {
@@ -33,7 +35,25 @@ class ProfileData {
         post: parsedJson['post'],
         followers: parsedJson['followers'],
         following: parsedJson['following'],
+        // mobileData: MobileData.fromJson(parsedJson["mobileData"]),
         peopleFollows:
             List<String>.from(parsedJson["peopleFollows"].map((x) => x)));
   }
 }
+
+// class MobileData {
+//   num? ram;
+//   num? rom;
+//   num? screensize;
+//   String? mo_name;
+//   MobileData({this.mo_name, this.ram, this.rom, this.screensize});
+//
+//   factory MobileData.fromJson(Map<String, dynamic> parsedJson) {
+//     return MobileData(
+//       mo_name: parsedJson["mo_name"],
+//       rom: parsedJson["rom"],
+//       ram: parsedJson["ram"],
+//       screensize: parsedJson["screensize"],
+//     );
+//   }
+// }
