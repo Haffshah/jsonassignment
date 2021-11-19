@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "first_name":"Arena",
   "last_name":"Grande",
   "region":"North America",
@@ -10,6 +11,19 @@
   "profile_pic":"assets/images/photo.png",
   "peopleFollows":[
     "Kalpit Seksariya",
+=======
+  "first_name": "Arena",
+  "last_name": "Grande",
+  "region": "North America",
+  "country": "UK",
+  "bio": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,",
+  "post": 200,
+  "followers": 25000,
+  "following": 50,
+  "profile_pic":
+  "assets/images/photo.png",
+  "peopleFollows" :[  "Kalpit Seksariya",
+>>>>>>> 8b0789ce6e7adfd6dcf1e60a3d3d6f274718a1a6
     "Gaurang Gajera",
     "Bollam saiprakash",
     "Dhruv Vaghela",
@@ -58,6 +72,7 @@
     "ushal jain",
     "Snehal Prajapati"
   ],
+<<<<<<< HEAD
   "mobile":{
     "ram":5.5,
     "rom":72,
@@ -89,4 +104,12 @@
     }
   ]
 
+=======
+"mobile" : {
+  "ram": 5.5,
+  "rom": 72,
+  "screensize": 6.25,
+  "name": "Asus Zenfone"
+}
+>>>>>>> 8b0789ce6e7adfd6dcf1e60a3d3d6f274718a1a6
 }

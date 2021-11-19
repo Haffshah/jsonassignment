@@ -6,11 +6,15 @@ class ProfileData {
   String? bio;
   num? post;
   num? followers;
-  num? following;
+  double? following;
   String? image;
   List<String>? peopleFollows;
+<<<<<<< HEAD
   MobileDataModel? mobile;
   List<WeeklyResults>? results;
+=======
+  // MobileData? mobileData;
+>>>>>>> 8b0789ce6e7adfd6dcf1e60a3d3d6f274718a1a6
 
   ProfileData(
       {this.image,
@@ -22,9 +26,14 @@ class ProfileData {
       this.post,
       this.followers,
       this.following,
+<<<<<<< HEAD
       this.mobile,
       this.peopleFollows,
       this.results});
+=======
+        // this.mobileData,
+      this.peopleFollows});
+>>>>>>> 8b0789ce6e7adfd6dcf1e60a3d3d6f274718a1a6
 
   factory ProfileData.fromJson(Map<String, dynamic> parsedJson) {
     return ProfileData(
@@ -37,6 +46,7 @@ class ProfileData {
         post: parsedJson['post'],
         followers: parsedJson['followers'],
         following: parsedJson['following'],
+<<<<<<< HEAD
         peopleFollows: List<String>.from(
           parsedJson["peopleFollows"].map((x) => x),
         ),
@@ -89,5 +99,27 @@ class WeeklyResults {
 
   factory WeeklyResults.fromJson(Map<String, dynamic> parsedJson) {
     return WeeklyResults(day: parsedJson['day'], score: parsedJson['score']);
+=======
+        // mobileData: MobileData.fromJson(parsedJson["mobileData"]),
+        peopleFollows:
+            List<String>.from(parsedJson["peopleFollows"].map((x) => x)));
+>>>>>>> 8b0789ce6e7adfd6dcf1e60a3d3d6f274718a1a6
   }
 }
+
+// class MobileData {
+//   num? ram;
+//   num? rom;
+//   num? screensize;
+//   String? mo_name;
+//   MobileData({this.mo_name, this.ram, this.rom, this.screensize});
+//
+//   factory MobileData.fromJson(Map<String, dynamic> parsedJson) {
+//     return MobileData(
+//       mo_name: parsedJson["mo_name"],
+//       rom: parsedJson["rom"],
+//       ram: parsedJson["ram"],
+//       screensize: parsedJson["screensize"],
+//     );
+//   }
+// }
