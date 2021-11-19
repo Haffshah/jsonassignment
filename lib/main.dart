@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
+
 import 'package:jsonassignment/screens/MyHomePage.dart';
-=======
-import 'package:jsonassignment/Screens/MyHomePage.dart';
->>>>>>> 8b0789ce6e7adfd6dcf1e60a3d3d6f274718a1a6
+
+
 
 void main() {
   runApp(MyApp());
