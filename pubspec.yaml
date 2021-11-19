@@ -10,9 +10,21 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
   cupertino_icons: ^1.0.2
+
+  # API Calling
+  # https://pub.dev/packages/http
+  http: ^0.13.3
+
+  # Toast Message Display
+  # https://pub.dev/packages/fluttertoast/install
+  fluttertoast: ^8.0.8
+
+  # Storing Data Locally
+  # https://pub.dev/packages/shared_preferences/install
+  shared_preferences: ^2.0.7
+
+
 
 dev_dependencies:
   flutter_test:

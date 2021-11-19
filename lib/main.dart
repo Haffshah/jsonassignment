@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jsonassignment/MyHomePage.dart';
+import 'package:jsonassignment/screens/MyHomePage.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'Avenir',
       ),
       home: MyHomePage(),
     );
